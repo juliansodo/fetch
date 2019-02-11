@@ -1,0 +1,36 @@
+<div class="card">
+<div class="card-body grey lighten-5">
+    <div class="col-md-11">
+            <div class="card border-0 bg-transparent">
+                <div class="card-body p-0">
+                    <div class="col-md-12 p-0">
+                        <div class="col-md-12 p-0">
+                            <div class="row">
+                                <div class="col-md-2  col-sm-2  col-3 p-0">
+                                    <img src="/img/<%= post.perfil_img %>" class="w-75 rounded-circle" alt="">   
+                                </div>
+                                <div class="col-md-10  col-sm-10 col-9">
+                                  <div class="row">
+                                    <a href="/perfiles/<%= post.usuario %>" class="black-text mr-2"><h6><%= post.nombre %></h6></a>
+                                    <label for="" class="text-muted ml-0 p-0 m-0">@<%= post.usuario %></label>
+                                  </div>
+                                  <div class="row  "  style="word-break: break-word;">
+                                    <p class="d-inline-block " style=""><%= post.texto %></p>
+                                </div> 
+                                <div class="row text-center">
+                                    <div class="col-md-4 col-4 col-sm-4">
+                                     <a href=""><i class="material-icons  black-text" title="repostear">lightbulb_outline</i><%= post.shares %></a>
+                                    </div>
+                                    <div class="col-md-4 col-4 col-sm-4">
+                                        <a href="">   <i class="material-icons black-text" title="favorito">favorite</i><%= post.likes %></a>
+                                    </div>
+                                </div>
+                                </div>
+                            </div>
+                            </div>
+                    </div>
+                </div>
+            </div>
+    </div>
+</div>
+</div>

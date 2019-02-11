@@ -1,0 +1,20 @@
+INICIO----->TIMELINE----->la idea es que ahi aparezcan todos los posts del propio usuario, como los posts también de las personas a las que sigue. ordenados por fecha y hora(la propia tabla de posts posee un campo timestamp donde guarda la fecha y hora de la publicacion) -- tal vez conviene usar el modulo timeago.js
+
+SEGUIR A OTRO USUARIO---> CONSOLIDAR UN SEGUIMIENTO, tenemos un emisor y un receptor, yo puedo seguir a alguien y que el no me siga, por lo tanto, para que haya un seguimiento mutuo deben haber dos registros almacenados.
+
+SISTEMA DE RE-POST-----> Las personas pueden re-postear publicaciones de otra persona, la siga o no. Este sistema debe calcular cuantos re-post tienen una publicacion, también se le debe dar la oportunidad al usuario para que deje de re-postear una publicacion. Cuando el propio usuario re-postea algo de otro, se crea un nuevo registro de post, donde se apunta a la publicacion re-posteada.
+
+SISTEMA DE LIKES------>IGUAL que el re-post, no más que acá solo se da fav, no se guarda en ningun lado, solamente altera la cantidad de likes que recibio la publicacion (campo likes de la tabla posts) y se le suma 1 a la cantidad de favoritos que recibio el usuario que publico el post que recibio like.
+
+SISTEMA DE NOTIFICACIONES----> no me imagino como hacerlo
+
+SISTEMA DE RESPONDER PUBLICACIONES ¿¿¿¿¿¿¿¿¿¿?????
+
+-------------------------------------------------------
+SISTEMA DE PREGUNTAS--> yo le puedo preguntar algo a una persona, tanto de forma anonima como pública,
+
+RESPONDER PREGUNTAS--> el usuario puede responder las preguntas que un tercero le haya hecho (tal vez conviene que se guarde en la misma tabla posts, como pregunta)
+
+RECHAZAR PREGUNTAS----> facil, si yo rechazo una pregunta se elimina de la base de datos.
+
+PUNTUAR RESPUESTAS----> Si yo respondo una pregunta, la gente puede darle like, no mas que en este caso seria (+1 punto).
