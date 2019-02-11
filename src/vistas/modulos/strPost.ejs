@@ -13,6 +13,7 @@
                                   <div class="row">
                                     <a href="/perfiles/<%= post.usuario %>" class="black-text mr-2"><h6><%= post.nombre %></h6></a>
                                     <label for="" class="text-muted ml-0 p-0 m-0">@<%= post.usuario %></label>
+                                    <small class="ml-3 text-muted"><%= formatearHora(post.fecha) %></small>
                                   </div>
                                   <div class="row  "  style="word-break: break-word;">
                                     <p class="d-inline-block " style=""><%= post.texto %></p>

@@ -3,12 +3,12 @@
 
     <div class="container">
         <div class="card">
-            <div class="card-header text-center p-4">
+            <div class="card-header text-center p-2 teal lighten-1 text-white">
                 <div class="title">
-                    <h3 class="duro">Editar perfil</h3>
+                    <h2 class="duro">Editar perfil</h2>
                 </div>
             </div>
-            <div class="card-body  teal lighten-2">
+            <div class="card-body  teal lighten-3">
         <div class="card-md-12">
             <div class="row ">
                     <div class="col-md-3 ">
@@ -56,6 +56,11 @@
                                            <textarea name="header" class="form-control" id="" cols="30" rows="3" style="resize: none; overflow: hidden; " maxlength="60"><%= usuario.header %></textarea>
                                         </div>
                                         <button type="submit" class="btn btn-success">Guardar</button>
+                                        <%if (locals.error) {%>
+                                            <div class="alert alert-warning" role="alert">
+                                                    <%= mensaje %>
+                                            </div>
+                                        <%}%>
                                     </form>
                                 </div>
                             </div>

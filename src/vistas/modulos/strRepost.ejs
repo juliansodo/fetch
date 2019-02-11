@@ -1,25 +1,26 @@
 <div class="card">
-<div class="card-body grey lighten-3">
-    <div class="card-title">
+<div class="card-body grey lighten-3 p-1">
+    <div class="card-title text-center">
         <small for="" class="text-muted"><%= perfil.nombre %> re-posteó</small>
     </div>
-    <div class="col-md-11">
+    <div class="col-md-11  mx-auto">
             <div class="card">
-                <div class="card-body">
-                    <div class="col-md-8">
-                        <div class="col-md-12">
-                            <div class="row">
-                                <div class="col-md-2  col-sm-2  col-3 p-0">
-                                    <img src="/img/<%= post.perfil_img %>" class="w-100 rounded-circle" alt="">   
-                                </div>
+            <div class="card-body p-0">
+            <div class="col-md-12 p-0">
+                <div class="col-md-12 p-0">
+                    <div class="row  p-2">
+                        <div class="col-md-2  col-sm-2  col-3 ">
+                            <img src="/img/<%= post.perfil_img %>" class="w-75 rounded-circle" alt="">   
+                        </div>
                                 <div class="col-md-10  col-sm-10 col-9">
-                                  <div class="row">
-                                    <div class="col-md-6 m-0 "><a href="/perfiles/<%= post.usuario %>" class="black-text"><h6><%= post.nombre %></h6></a></div>
-                                    <div class="col-md-6  p-0 m-0" ><label for="" class="text-muted ml-0 p-0 m-0">@<%= post.usuario %></label></div>
+                                <div class="row ">
+                                    <a href="/perfiles/<%= post.usuario %>" class="black-text mr-2"><h6><%= post.nombre %></h6></a>
+                                    <label for="" class="text-muted ml-0 p-0 m-0">@<%= post.usuario %></label>
+                                    <small class="ml-3 text-muted"><%= formatearHora(post.fecha) %></small>
                                   </div>
-                                  <div class="row ml-md-1">
-                                    <p><%= post.texto %></p>
-                                </div> 
+                                <div class="row  "  style="word-break: break-word;">
+                                <p class="d-inline-block " style=""><%= post.texto %></p>
+                            </div> 
                                 <div class="row text-center">
                                     <div class="col-md-4 col-4 col-sm-4">
                                      <a href=""><i class="material-icons  black-text" title="repostear">lightbulb_outline</i><%= post.shares %></a>
