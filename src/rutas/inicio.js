@@ -1,6 +1,7 @@
 const express = require("express");
 const rutas = express.Router();
 const bd = require("../db");
+const {irAMiPerfil, irOtroPerfil, ActualizarDatos} = require('./funciones');
 rutas.get("/" , (req,res) =>
 {
     if(req.session.usuario) //si existe una session activa,

@@ -12,7 +12,7 @@ rutas.post("/post" , (req,res) =>
      
         if(post.length > 0 && post.length <=200)
         {
-            bd.query("INSERT INTO posts(userID, texto) VALUES(?,?)", [userID, post], (error,filas, columnas) =>
+            bd.query("INSERT INTO posts(userID, texto) VALUES((SELECT id FROM usuarios where usuarios.usuario = ?),?)", [req.session.usuario, post], (error,filas, columnas) =>
             {
                 if(!error)
                 {

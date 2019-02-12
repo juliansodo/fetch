@@ -1,6 +1,7 @@
 const express = require("express");
 const rutas = express.Router();
 const bd = require("../db");
+const {irAMiPerfil, irOtroPerfil, ActualizarDatos} = require('./funciones');
 rutas.get("/editarPerfil", (req,res) =>
 {
     const usuario = req.session;
@@ -85,7 +86,7 @@ rutas.post("/editarPerfil", async(req,res)=>
         });        
     }
     ActualizarDatos(req,res);
-    res.render("editarPerfil", {error: error, mensaje:mensaje, usuario:req.session.usuario});
+    res.render("editarPerfil", {error: error, mensaje:mensaje, usuario:req.session});
 });
 
 module.exports = rutas;
