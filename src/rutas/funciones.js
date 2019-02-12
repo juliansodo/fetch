@@ -18,10 +18,18 @@ function irAMiPerfil(req,res)
                                      perfil = filas[0];
 
                                      //const postsQuery = bd.query(`SELECT posts.*, usuarios.usuario, usuarios.nombre, imagenes.url as perfil_img from posts INNER JOIN usuarios ON usuarios.id = posts.userID INNER JOIN imagenes ON imagenes.userID = posts.userID WHERE posts.userID = ? ORDER BY fecha desc LIMIT 10`, [perfil.id], (errorPosts,filasPosts, camposPosts) =>
-                                     const postsQuery = await bd.query(`CALL postscompletos (?)`, [perfil.id], (errorPosts,filasPosts, camposPosts) =>
+                                     let sql = `CALL postscompletos(?)`;
+                                     const postsQuery = await  bd.query(sql, perfil.id, (errorPosts,filasPosts, camposPosts) =>
                                      {
-                                         console.log(perfil.id)
+                                       if(errorPosts)
+                                       {
+                                           console.log(errorPosts);
+                                       }
+                                       else
+                                       {
+                                        console.log()
                                         posts = filasPosts;
+                                       }
                                      });
                                      const recomendadosQuery = bd.query(`SELECT usuarios.usuario, usuarios.nombre, usuarios.id, imagenes.url as perfil_img FROM usuarios INNER JOIN imagenes ON imagenes.userID = usuarios.id WHERE usuarios.id <> ? ORDER BY RAND() LIMIT 3`, [req.session.id], (errorRec,filasRec, camposRec) =>
                                      {
