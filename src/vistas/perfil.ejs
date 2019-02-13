@@ -59,13 +59,13 @@ body{
                             </div>
                             <% include modulos/strPostear.ejs %>
                             <div class="container-fluid teal lighten-3 mt-2 p-1">
-                                    <%for (var post in posts) {%>
-                                        <%if (posts[post].esREPOST == 1) {%>
-                                            <%- include('modulos/strRepost.ejs', {post: posts[post], usuario:perfil}); %>
-                                        <%}else{%>
-                                                <%- include('modulos/strPost.ejs', {post: posts[post], usuario:perfil}); %>
-                                            <%}%>
-                                    <%}%>
+                            <%for (var post in posts) {%>
+                                <%if (posts[post].esREPOST == 1) {%>
+                                    <%- include('modulos/strRepost.ejs', {post: posts[post], usuario:perfil}); %>
+                                <%}else{%>
+                                    <%- include('modulos/strPost.ejs', {post: posts[post], usuario:perfil}); %>
+                                <%}%>
+                            <%}%>
                             </div>
                   </div>
                   <div class="col-md-3  col-sm-12  col-12">
