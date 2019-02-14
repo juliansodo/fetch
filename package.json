@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon src/index.js"
+    "dev": "nodemon src/index.js",
+    "webpack": "webpack --mode development --watch"
   },
   "keywords": [],
   "author": "",
@@ -20,6 +21,16 @@
     "morgan": "^1.9.1",
     "mysql": "^2.16.0",
     "nodemon": "^1.18.9",
-    "timeago.js": "^4.0.0-beta.2"
+    "timeago.js": "^4.0.0-beta.2",
+    "vue": "^2.6.6"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.5",
+    "babel-preset-env": "^1.7.0",
+    "vue-loader": "^15.6.2",
+    "vue-template-compiler": "^2.6.6",
+    "webpack": "^4.29.3",
+    "webpack-cli": "^3.2.3"
   }
 }

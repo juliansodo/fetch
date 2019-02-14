@@ -1,7 +1,9 @@
 
+
 const express = require("express");
 const rutas = express.Router();
 const bd = require("../db");
+const timeago = require("timeago.js");
 /*----------------------------------------------------->FUNCIONES<------------------------------------*/
 function irAMiPerfil(req,res)
 {
@@ -26,7 +28,7 @@ function irAMiPerfil(req,res)
                                        }
                                        else
                                        {
-                                           console.log(filasPosts)
+                                           
                                             posts = filasPosts[0];
                                        }
                                      });
@@ -74,7 +76,6 @@ function irOtroPerfil(req,res)
                                          }
                                          else
                                          {
-                                            console.log(posts)
                                              recomendados = filasRec;
                                              
                                              res.render("perfilOtros", {perfil:perfil, posts:posts, recomendados:recomendados});
@@ -84,6 +85,11 @@ function irOtroPerfil(req,res)
                                 }
                             });
 }
+
+function formatearHora (hora)
+{
+    return timeago.format(hora, 'es_AR');
+};
 
 function ActualizarDatos(req,res)
 {
@@ -97,5 +103,6 @@ module.exports =
 {   rutas,
     ActualizarDatos,
     irAMiPerfil,
-    irOtroPerfil
+    irOtroPerfil,
+    formatearHora
 };

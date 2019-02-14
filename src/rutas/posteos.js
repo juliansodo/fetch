@@ -9,7 +9,7 @@ rutas.post("/post" , (req,res) =>
     {
         const {post} = req.body;
         const userID = req.session.id;
-     
+        console.log(post)
         if(post.length > 0 && post.length <=200)
         {
             bd.query("INSERT INTO posts(userID, texto) VALUES((SELECT id FROM usuarios where usuarios.usuario = ?),?)", [req.session.usuario, post], (error,filas, columnas) =>

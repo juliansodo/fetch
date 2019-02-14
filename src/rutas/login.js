@@ -103,7 +103,7 @@ rutas.post("/ingreso", (req,res) =>
                 {
                     if(!error)
                     {
-                        console.log(filas[0].id)
+                        
                         req.session.id = filas[0].id;
                         bd.query(" INSERT INTO imagenes(userID, tipo, url) VALUES (?, 1, 'no-user.png')", [req.session.id]);
                         ActualizarDatos(req,res);

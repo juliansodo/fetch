@@ -1,4 +1,4 @@
-
+DELIMITER $$
 CREATE PROCEDURE `postscompletos`(IN `puserID` INT)
 BEGIN
 CREATE TEMPORARY TABLE tmp_POSTS as (SELECT posts.* from posts  WHERE posts.userID = puserID AND posts.esREPOST = 0);
@@ -17,4 +17,5 @@ SELECT * FROM tmp_AMBOS order by fecha desc;
 DROP TABLE tmp_POSTS;
 DROP TABLE tmp_REPOSTS;
 DROP TABLE tmp_AMBOS;
-END
+END$$
+DELIMITER ;
