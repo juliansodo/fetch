@@ -2,7 +2,6 @@ DELIMITER $$
 CREATE PROCEDURE `re_postear`(IN `puserID` INT(11), IN `ppostID` INT(11))
     NO SQL
 BEGIN
-
 SET @idusuario_post = (SELECT usuarios.id 
 FROM usuarios INNER JOIN posts ON posts.userID = usuarios.id WHERE posts.id = ppostID);
 
