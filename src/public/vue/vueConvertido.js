@@ -158,6 +158,18 @@ eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n    value: true\n});
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js!./node_modules/vue-loader/lib/index.js?!./src/app/componentes/registro.vue?vue&type=script&lang=js&":
+/*!*****************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib!./node_modules/vue-loader/lib??vue-loader-options!./src/app/componentes/registro.vue?vue&type=script&lang=js& ***!
+  \*****************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n    value: true\n});\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n\nexports.default = {\n    data: function data() {\n        return {\n            title: asdas\n\n        };\n    },\n\n    methods: {\n        validationPass: function validationPass(e) {\n            if (e.target.value.length <= 6) {\n                e.target.classList.add('is-invalid');\n                e.target.classList.remove('is-valid');\n            } else {\n                e.target.classList.add('is-valid');\n                e.target.classList.remove('is-invalid');\n            }\n        },\n        validationUser: function validationUser(e) {\n            if (e.target.value.length <= 2) {\n                e.target.classList.add('is-invalid');\n                e.target.classList.remove('is-valid');\n            } else {\n                e.target.classList.add('is-valid');\n                e.target.classList.remove('is-invalid');\n            }\n        }\n    }\n};\n\n//# sourceURL=webpack:///./src/app/componentes/registro.vue?./node_modules/babel-loader/lib!./node_modules/vue-loader/lib??vue-loader-options");
+
+/***/ }),
+
 /***/ "./node_modules/process/browser.js":
 /*!*****************************************!*\
   !*** ./node_modules/process/browser.js ***!
@@ -275,6 +287,18 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) *
 
 /***/ }),
 
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./src/app/componentes/registro.vue?vue&type=template&id=79d5eede&":
+/*!*******************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./src/app/componentes/registro.vue?vue&type=template&id=79d5eede& ***!
+  \*******************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"render\", function() { return render; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"staticRenderFns\", function() { return staticRenderFns; });\nvar render = function() {\n  var _vm = this\n  var _h = _vm.$createElement\n  var _c = _vm._self._c || _h\n  return _c(\"div\", { staticClass: \"container-fluid p-5  \" }, [\n    _c(\"div\", { staticClass: \"container text-white\" }, [\n      _c(\"div\", { staticClass: \"col-md-9 mx-auto\" }, [\n        _c(\"div\", { staticClass: \"card p-3 teal lighten-3\" }, [\n          _c(\"div\", { staticClass: \"rows\" }, [\n            _vm._m(0),\n            _vm._v(\" \"),\n            _c(\"div\", { staticClass: \"col-md-6 float-right  border-left\" }, [\n              _vm._m(1),\n              _vm._v(\" \"),\n              _c(\n                \"form\",\n                {\n                  staticClass: \"form-group col-md-9 mx-auto \",\n                  attrs: { method: \"POST\", action: \"/ingreso\" }\n                },\n                [\n                  _c(\n                    \"label\",\n                    { staticClass: \"mt-3 duro\", attrs: { for: \"\" } },\n                    [_vm._v(\"Usuario\")]\n                  ),\n                  _vm._v(\" \"),\n                  _c(\"div\", { staticClass: \"input-group\" }, [\n                    _vm._m(2),\n                    _vm._v(\" \"),\n                    _c(\"input\", {\n                      staticClass: \"form-control\",\n                      attrs: {\n                        type: \"text\",\n                        name: \"usuario\",\n                        id: \"user\",\n                        placeholder: \"Usuario\"\n                      },\n                      on: { keyup: _vm.validationUser }\n                    })\n                  ]),\n                  _vm._v(\" \"),\n                  _c(\n                    \"label\",\n                    { staticClass: \"mt-3 duro\", attrs: { for: \"\" } },\n                    [_vm._v(\"Contraseña\")]\n                  ),\n                  _vm._v(\" \"),\n                  _c(\"input\", {\n                    staticClass: \"form-control\",\n                    attrs: {\n                      type: \"password\",\n                      id: \"pass\",\n                      name: \"clave\",\n                      placeholder: \"Contraseña\"\n                    },\n                    on: { keyup: _vm.validationPass }\n                  }),\n                  _vm._v(\" \"),\n                  _c(\n                    \"label\",\n                    { staticClass: \"mt-3 duro\", attrs: { for: \"\" } },\n                    [_vm._v(\"Apodo\")]\n                  ),\n                  _vm._v(\" \"),\n                  _c(\"input\", {\n                    staticClass: \"form-control\",\n                    attrs: {\n                      type: \"text \",\n                      id: \"apodo\",\n                      name: \"fullname\",\n                      placeholder: \"Apodo\"\n                    },\n                    on: { keyup: _vm.validationUser }\n                  }),\n                  _vm._v(\" \"),\n                  _c(\n                    \"label\",\n                    { staticClass: \"mt-3 duro\", attrs: { for: \"\" } },\n                    [_vm._v(\"Genero\")]\n                  ),\n                  _vm._v(\" \"),\n                  _vm._m(3),\n                  _vm._v(\" \"),\n                  _c(\n                    \"button\",\n                    {\n                      staticClass: \"btn teal text-white btn-block mt-2 duro\",\n                      attrs: { type: \"submit\" }\n                    },\n                    [_vm._v(\"Registrarse\")]\n                  ),\n                  _vm._v(\" \"),\n                  _c(\"h6\", { staticClass: \"white-text\" })\n                ]\n              )\n            ])\n          ])\n        ])\n      ])\n    ])\n  ])\n}\nvar staticRenderFns = [\n  function() {\n    var _vm = this\n    var _h = _vm.$createElement\n    var _c = _vm._self._c || _h\n    return _c(\"div\", { staticClass: \"col-md-6 float-left\" }, [\n      _c(\"div\", { staticClass: \"card-title text-center  border-bottom\" }, [\n        _c(\"h3\", { staticClass: \"duro\" }, [_vm._v(\"Iniciar sesion\")])\n      ]),\n      _vm._v(\" \"),\n      _c(\n        \"form\",\n        {\n          staticClass: \" form-group col-md-9 mx-auto\",\n          attrs: { method: \"POST\", action: \"/login\" }\n        },\n        [\n          _c(\"label\", { staticClass: \"mt-3 duro\", attrs: { for: \"\" } }, [\n            _vm._v(\"Usuario\")\n          ]),\n          _vm._v(\" \"),\n          _c(\"input\", {\n            staticClass: \"form-control\",\n            attrs: { type: \"text\", name: \"usuario\", placeholder: \"Usuario\" }\n          }),\n          _vm._v(\" \"),\n          _c(\"label\", { staticClass: \"mt-3  duro\", attrs: { for: \"\" } }, [\n            _vm._v(\"Contraseña\")\n          ]),\n          _vm._v(\" \"),\n          _c(\"input\", {\n            staticClass: \"form-control\",\n            attrs: {\n              type: \"password\",\n              name: \"clave\",\n              placeholder: \"Contraseña\"\n            }\n          }),\n          _vm._v(\" \"),\n          _c(\n            \"button\",\n            {\n              staticClass: \"btn btn-primary text-white btn-block mt-2 duro\",\n              attrs: { type: \"submit\" }\n            },\n            [_vm._v(\"Acceder\")]\n          ),\n          _vm._v(\" \"),\n          _c(\"h6\", { staticClass: \"white-text\" })\n        ]\n      )\n    ])\n  },\n  function() {\n    var _vm = this\n    var _h = _vm.$createElement\n    var _c = _vm._self._c || _h\n    return _c(\"div\", { staticClass: \"card-title border-bottom text-center\" }, [\n      _c(\"h3\", { staticClass: \"duro\" }, [_vm._v(\"Registrarse\")])\n    ])\n  },\n  function() {\n    var _vm = this\n    var _h = _vm.$createElement\n    var _c = _vm._self._c || _h\n    return _c(\"div\", { staticClass: \"input-group-prepend\" }, [\n      _c(\"div\", { staticClass: \"input-group-text\" }, [_vm._v(\"@\")])\n    ])\n  },\n  function() {\n    var _vm = this\n    var _h = _vm.$createElement\n    var _c = _vm._self._c || _h\n    return _c(\n      \"select\",\n      {\n        staticClass: \"form-control\",\n        attrs: { id: \"inputState\", name: \"genero\" }\n      },\n      [\n        _c(\"option\", { attrs: { selected: \"\", value: \"0\" } }, [\n          _vm._v(\"No especificar\")\n        ]),\n        _vm._v(\" \"),\n        _c(\"option\", { attrs: { value: \"1\" } }, [_vm._v(\"Masculino\")]),\n        _vm._v(\" \"),\n        _c(\"option\", { attrs: { value: \"2\" } }, [_vm._v(\"Femenino\")]),\n        _vm._v(\" \"),\n        _c(\"option\", { attrs: { value: \"3\" } }, [_vm._v(\"Otro\")])\n      ]\n    )\n  }\n]\nrender._withStripped = true\n\n\n\n//# sourceURL=webpack:///./src/app/componentes/registro.vue?./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options");
+
+/***/ }),
+
 /***/ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js":
 /*!********************************************************************!*\
   !*** ./node_modules/vue-loader/lib/runtime/componentNormalizer.js ***!
@@ -334,10 +358,17 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _nod
 
 /***/ }),
 
+<<<<<<< HEAD
 /***/ "./src/app/componentes/MiPerfil.vue?vue&type=template&id=11129ed3&":
 /*!*************************************************************************!*\
   !*** ./src/app/componentes/MiPerfil.vue?vue&type=template&id=11129ed3& ***!
   \*************************************************************************/
+=======
+/***/ "./src/app/componentes/PerfilesRecomendados.vue?vue&type=template&id=3de2804e&":
+/*!*************************************************************************************!*\
+  !*** ./src/app/componentes/PerfilesRecomendados.vue?vue&type=template&id=3de2804e& ***!
+  \*************************************************************************************/
+>>>>>>> 4028c9f66e76aaae23693a992219fb5cc9ec5885
 /*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -406,6 +437,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _nod
 
 /***/ }),
 
+<<<<<<< HEAD
 /***/ "./src/app/componentes/mod_MisEstadisticas.vue":
 /*!*****************************************************!*\
   !*** ./src/app/componentes/mod_MisEstadisticas.vue ***!
@@ -514,6 +546,8 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _nod
 
 /***/ }),
 
+=======
+>>>>>>> 4028c9f66e76aaae23693a992219fb5cc9ec5885
 /***/ "./src/app/componentes/registro.vue":
 /*!******************************************!*\
   !*** ./src/app/componentes/registro.vue ***!
@@ -558,7 +592,11 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _nod
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
+<<<<<<< HEAD
 eval("\n\nvar _vue = __webpack_require__(/*! vue */ \"./node_modules/vue/dist/vue.runtime.esm.js\");\n\nvar _vue2 = _interopRequireDefault(_vue);\n\nvar _indexSync = __webpack_require__(/*! ./componentes/indexSync.vue */ \"./src/app/componentes/indexSync.vue\");\n\nvar _indexSync2 = _interopRequireDefault(_indexSync);\n\nvar _indexNoSync = __webpack_require__(/*! ./componentes/indexNoSync.vue */ \"./src/app/componentes/indexNoSync.vue\");\n\nvar _indexNoSync2 = _interopRequireDefault(_indexNoSync);\n\nvar _MiPerfil = __webpack_require__(/*! ./componentes/MiPerfil.vue */ \"./src/app/componentes/MiPerfil.vue\");\n\nvar _MiPerfil2 = _interopRequireDefault(_MiPerfil);\n\nvar _registro = __webpack_require__(/*! ./componentes/registro.vue */ \"./src/app/componentes/registro.vue\");\n\nvar _registro2 = _interopRequireDefault(_registro);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nnew _vue2.default({\n    render: function render(h) {\n        return h(_indexSync2.default);\n    }\n}).$mount(\"#indexSync\");\n\nnew _vue2.default({\n\n    render: function render(h) {\n        return h(_indexNoSync2.default);\n    }\n}).$mount(\"#indexNoSync\");\n\nnew _vue2.default({\n\n    render: function render(h) {\n        return h(_registro2.default);\n    }\n}).$mount(\"#registro\");\n\nnew _vue2.default({\n    render: function render(h) {\n        return h(_MiPerfil2.default);\n    }\n}).$mount(\"#MiPerfil\");\n\n//# sourceURL=webpack:///./src/app/index.js?");
+=======
+eval("\n\nvar _vue = __webpack_require__(/*! vue */ \"./node_modules/vue/dist/vue.runtime.esm.js\");\n\nvar _vue2 = _interopRequireDefault(_vue);\n\nvar _indexSync = __webpack_require__(/*! ./componentes/indexSync.vue */ \"./src/app/componentes/indexSync.vue\");\n\nvar _indexSync2 = _interopRequireDefault(_indexSync);\n\nvar _indexNoSync = __webpack_require__(/*! ./componentes/indexNoSync.vue */ \"./src/app/componentes/indexNoSync.vue\");\n\nvar _indexNoSync2 = _interopRequireDefault(_indexNoSync);\n\nvar _registro = __webpack_require__(/*! ./componentes/registro.vue */ \"./src/app/componentes/registro.vue\");\n\nvar _registro2 = _interopRequireDefault(_registro);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nnew _vue2.default({\n    render: function render(h) {\n        return h(_indexSync2.default);\n    }\n}).$mount(\"#indexSync\");\n\nnew _vue2.default({\n\n    render: function render(h) {\n        return h(_indexNoSync2.default);\n    }\n}).$mount(\"#indexNoSync\");\n\nnew _vue2.default({\n\n    render: function render(h) {\n        return h(_registro2.default);\n    }\n}).$mount(\"#registro\");\n\n//# sourceURL=webpack:///./src/app/index.js?");
+>>>>>>> 4028c9f66e76aaae23693a992219fb5cc9ec5885
 
 /***/ })
 
