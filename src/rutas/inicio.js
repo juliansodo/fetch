@@ -1,7 +1,7 @@
 const express = require("express");
 const rutas = express.Router();
 const bd = require("../db");
-const {irAMiPerfil, irOtroPerfil, ActualizarDatos, formatearHora} = require('./funciones');
+const {irAMiPerfil, irOtroPerfil, ActualizarDatos, formatearHora, SeguirUsuario} = require('./funciones');
 
 
 rutas.get("/" , (req,res) =>
@@ -37,7 +37,7 @@ rutas.get("/cargarRecomendados", (req,res)  =>
 {
     if(!req.session.usuario)
     {return 1;}
-    const recomendadosQuery = bd.query(`SELECT usuarios.usuario, usuarios.nombre, usuarios.id, imagenes.url as perfil_img FROM usuarios INNER JOIN imagenes ON imagenes.userID = usuarios.id WHERE usuarios.id <> ?  ORDER BY RAND() LIMIT 3`,[req.session.id], (errorRec,filasRec, camposRec) =>
+    const recomendadosQuery = bd.query(`SELECT usuarios.id, usuarios.usuario, usuarios.nombre, usuarios.id, imagenes.url as perfil_img FROM usuarios INNER JOIN imagenes ON imagenes.userID = usuarios.id WHERE usuarios.id <> ?  ORDER BY RAND() LIMIT 3`,[req.session.id], (errorRec,filasRec, camposRec) =>
     {
         if(errorRec)
         {
@@ -50,5 +50,10 @@ rutas.get("/cargarRecomendados", (req,res)  =>
             res.send(recomendados);
         }
     });
+});
+
+rutas.post("/seguirusuario", (req,res)=>
+{
+    SeguirUsuario(req,res);
 });
 module.exports = rutas;

@@ -99,10 +99,51 @@ function ActualizarDatos(req,res)
     });
 }
 
+
+function CargarMiPerfil(req,res)
+{
+    bd.query("SELECT usuario, nombre, header, imagenes.url as perfil_img FROM usuarios INNER JOIN imagenes ON imagenes.userID = usuarios.id WHERE usuarios.id = ?", [req.session.id], (error,filas, columnas)=>
+    {
+        if(error)
+        {
+            console.log(error);
+        }
+        else
+        {
+            res.send(filas[0]);
+        }
+    })
+}
+
+
+function SeguirUsuario(req,res)
+{
+    bd.query("CALL seguimientos(?,?)", [req.session.id, req.body.id],(error)=>
+    {
+        if(error)
+        {
+            let retorno=
+            {
+                status:'error'
+            };
+            res.send(retorno)
+        }
+        else
+        {            
+            let retorno=
+            {
+                status:'OK'
+            };
+            res.send(retorno);
+        }
+    });
+};
 module.exports = 
 {   rutas,
     ActualizarDatos,
     irAMiPerfil,
     irOtroPerfil,
-    formatearHora
+    formatearHora,
+    CargarMiPerfil,
+    SeguirUsuario
 };

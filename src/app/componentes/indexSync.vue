@@ -2,7 +2,7 @@
     <div class="container-fluid">
         <div class="row mt-1">
             <div class="col-md-3 p-2">
-                <h2 class="text-center duro">perfil</h2>
+                <perfilPropio></perfilPropio>
             </div>
             <div class="col-md-6 mx-auto border teal lighten-3 p-4 ">
               <div class="container-fluid p-0">
@@ -15,7 +15,7 @@
                       
                         <div v-if="post.esREPOST === 0" :key="post + '-second'">
                             <div class="card">
-                                <div class="card-body grey lighten-5">
+                                <div class="card-body grey lighten-5 pb-0   ">
                                     <div class="col-md-11">
                                             <div class="card border-0 bg-transparent">
                                             <div class="card-body p-0">
@@ -29,17 +29,17 @@
                                                                 <div class="row">
                                                                         <a  :key="post.usuario + '-first'" v-bind:href="'/perfiles/' + post.usuario" class="black-text mr-2"><h6 :key="post.nombre + '-first'">{{post.nombre}}</h6></a>
                                                                         <label for="" class="text-muted ml-0 p-0 m-0"  :key="post.usuario + '-second'" >@{{post.usuario}}</label>
-                                                                        <small class="ml-3 text-muted" :key="post.fecha + '-first'">{{post.fecha}}</small>
+                                                                        <small class="ml-3 mt-0 text-muted" :key="post.fecha + '-first'">{{post.fecha}}</small>
                                                                     </div>
                                                                     <div class="row  "  style="word-break: break-word;">
                                                                         <p class="d-inline-block " style=""  :key="post.texto">{{post.texto}}</p>
                                                                     </div>
                                                                     <div class="row text-center">
                                                                     <div class="col-md-4 col-4 col-sm-4">
-                                                                    <a href=""  :key="post.shares"><i class="material-icons  black-text" title="repostear">lightbulb_outline</i>{{post.shares}}</a>
+                                                                    <button class="btn btn-default btn-sm" :key="post.shares"><i class="material-icons  black-text" title="repostear">lightbulb_outline</i>{{post.shares}}</button>
                                                                     </div>
                                                                     <div class="col-md-4 col-4 col-sm-4">
-                                                                    <a href=""><i class="material-icons black-text" title="favorito"  :key="post.likes">favorite</i>{{post.likes}}</a>
+                                                                    <button class="btn btn-default btn-sm"><i class="material-icons black-text" title="favorito"  :key="post.likes">favorite</i>{{post.likes}}</button>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -78,10 +78,10 @@
                                                                 </div> 
                                                                 <div class="row text-center">
                                                                     <div class="col-md-4 col-4 col-sm-4">
-                                                                    <button class="bg-transparent border-0 repost" > <i class="material-icons rp yellow-text" title="repostear">lightbulb_outline</i>{{post.shares}}</button>
+                                                                    <button class="btn btn-default btn-sm"><i class="material-icons black-text" title="favorito"  :key="post.likes">lightbulb_outline</i>{{post.likes}}</button>
                                                                     </div>
                                                                     <div class="col-md-4 col-4 col-sm-4">
-                                                                        <button class="bg-transparent border-0 repost" > <i class="material-icons rp black-text" title="repostear">favorites</i>{{post.likes}}</button>
+                                                                    <button class="btn btn-default btn-sm"><i class="material-icons black-text" title="favorito"  :key="post.likes">favorite</i>{{post.likes}}</button>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -118,11 +118,13 @@ class Post{
     }
 }
 
-import perfilesRecomendados from './PerfilesRecomendados.vue';
+import perfilesRecomendados from './mod_PerfilesRecomendados.vue';
+import perfilPropio from './mod_PerfilPropio.vue';
 export default
 {
      	components: {
-		'perfilesRecomendados': perfilesRecomendados
+        'perfilesRecomendados': perfilesRecomendados,
+        'perfilPropio': perfilPropio
 	},
         data()
         {

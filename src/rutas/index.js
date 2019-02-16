@@ -17,4 +17,7 @@ rutas.get("/salir" , (req,res) =>
     req.session = undefined;
     res.redirect("/");
 });
+
+
+
 module.exports = rutas;

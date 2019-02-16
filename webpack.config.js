@@ -1,10 +1,15 @@
 const {VueLoaderPlugin} =  require("vue-loader");
 module.exports = 
 {
-    entry: "./src/app/index.js",
+    entry: {
+        indexSync: "./src/app/indexSync.js",
+        indexNoSync: "./src/app/indexNoSync.js",
+        MiPerfil: "./src/app/MiPerfil.js",
+        Registro: "./src/app/Registro.js"
+    },
     output: {
         path: __dirname + "/src/public/vue",
-        filename: "vueConvertido.js"
+        filename: "[name].js"
     },
     module:
     {
