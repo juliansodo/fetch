@@ -62,7 +62,7 @@ rutas.get("/getEstadisticas", (req,res) =>
     {
         if(errorRec)
         {
-            console.log(error);
+            console.log(errorRec);
         }
         else
         {

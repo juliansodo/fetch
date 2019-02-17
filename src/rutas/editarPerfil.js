@@ -8,6 +8,11 @@ rutas.get("/editarPerfil", (req,res) =>
     res.render("editarPerfil", {usuario : usuario});
 });
 
+rutas.post("/editarPerfil", (req,res)=>{
+    console.log(req.file)
+    res.redirect("/");
+});
+
 rutas.post("/editarPerfil", async(req,res)=>
 {
     var mensaje="";
