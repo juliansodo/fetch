@@ -33,6 +33,7 @@ rutas.get("/cargarPosts", (req,res) =>
 });
 
 
+
 rutas.get("/cargarRecomendados", (req,res)  =>
 {
     if(!req.session.usuario)
@@ -51,6 +52,27 @@ rutas.get("/cargarRecomendados", (req,res)  =>
         }
     });
 });
+
+
+rutas.get("/getEstadisticas", (req,res) =>
+{
+    if(!req.session.usuario)
+    {return 1;}
+    const estadisticasQuery = bd.query(`select  usuarios.seguidos, usuarios.seguidores, usuarios.preguntas, usuarios.preguntas_respondidas, usuarios.preguntas_rechazadas, usuarios.preguntas_puntaje, usuarios.posts, usuarios.reposts, usuarios.favoritos FROM usuarios WHERE usuarios.id = ? `,[req.session.id], (errorRec,filasRec, camposRec) =>
+    {
+        if(errorRec)
+        {
+            console.log(error);
+        }
+        else
+        {
+            recomendados = filasRec[0];
+            
+            res.send(recomendados);
+        }
+    });
+
+})
 
 rutas.post("/seguirusuario", (req,res)=>
 {

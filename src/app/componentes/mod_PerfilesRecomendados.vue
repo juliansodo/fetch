@@ -2,7 +2,7 @@
     <div class="card">
         <div class="card-body">
             <div class="card-title duro text-center"><h4>RECOMENDADOS</h4></div>
-                <div class="card  border-0">
+                <div class="card  border-0 mb-0">
                     <div class="card-body p-0" >
                         <div v-for="recomendado of perfilesrecomendados" :key="recomendado + '-first'"> 
                             <div class="row mt-1">

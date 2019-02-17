@@ -93,7 +93,7 @@ function formatearHora (hora)
 
 function ActualizarDatos(req,res)
 {
-    bd.query("SELECT COUNT(*) as cantidad, nombre, id, header FROM usuarios WHERE usuario = ? AND clave = ? ", [req.session.usuario,req.session.clave], (errorC,filasC,columnasC)=>
+    bd.query("SELECT * FROM usuarios WHERE usuario = ?  ", [req.session.usuario], (errorC,filasC,columnasC)=>
     {
         req.session = filasC[0];
     });

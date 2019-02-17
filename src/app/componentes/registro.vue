@@ -60,12 +60,6 @@
 export default {
     data(){
         return{
-<<<<<<< HEAD
-
-=======
-            title:asdas
-        
->>>>>>> 4028c9f66e76aaae23693a992219fb5cc9ec5885
     }
      },
     methods:{
