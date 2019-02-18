@@ -7,8 +7,8 @@
                 <textarea v-model="post.post" name="post" class="form-control" id="" style="resize: none; overflow: hidden; " cols="6" rows="2" placeholder="Cuéntanos algo..." maxlength="200"></textarea>
                 </div>   
                 <div class="row float-right ">
-                    <label v-if="post.post.length>180" class="text-danger mt-3 mb-0">El post no puede superar los 180 caracteres.</label>
-                <button class="btn teal duro text-white mt-1" :class="{'disabled':post.post.length==0 || post.post.length>180}">POSTEAR</button>
+                    <label v-if="post.post.trim().length>180" class="text-danger mt-3 mb-0">El post no puede superar los 180 caracteres.</label>
+                <button class="btn teal duro text-white mt-1" :class="{'disabled':post.post.trim().length==0 || post.post.trim().length>180}">POSTEAR</button>
                 </div>
             </form> 
     </div>
@@ -39,7 +39,7 @@ export default {
     {
         Postear()
         {
-        if(post.post.length<=0 && post.post.length>180){return;}
+        if(this.post.post.length<=0 && this.post.post.length>180){return;}
         fetch("/post",
             {
                 method:'post',
@@ -50,8 +50,8 @@ export default {
                     'Content-Type':'application/json'
                 }
             })
-            this.post = new Post();
             this.getposts();
+            this.post = new Post();
         }
     }
 }

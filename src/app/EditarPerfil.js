@@ -1,5 +1,5 @@
 import Vue from 'vue';
-import EditarPerfil from './EditarPerfil';
+import EditarPerfil from './componentes/EditarPerfil.vue';
 
 
 new Vue({

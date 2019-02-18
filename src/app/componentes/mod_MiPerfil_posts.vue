@@ -8,7 +8,7 @@
                         <div class="col-md-12 p-0">
                             <div class="row">
                                 <div class="col-md-2  col-sm-2  col-3 p-0">
-                                    <img :src="'/img/'+post.perfil_img" class="w-75 rounded-circle" alt="">   
+                                    <img :key="post.perfil_img +'--posts'" :src="'/img/'+post.perfil_img" class="w-75 rounded-circle" alt="">   
                                 </div>
                                 <div class="col-md-10  col-sm-10 col-9">
                                     <div class="row">
@@ -21,10 +21,10 @@
                                     </div> 
                                     <div class="row text-center">
                                        <div class="col-md-4 col-4 col-sm-4">
-                                            <button class="btn btn-default btn-sm"><i class="material-icons black-text" title="favorito"  :key="post.likes">lightbulb_outline</i>{{post.likes}}</button>
+                                            <button class="btn btn-default btn-sm"><i class="material-icons black-text" title="favorito"  :key="post.likes + '-primer'">lightbulb_outline</i>{{post.likes}}</button>
                                             </div>
                                             <div class="col-md-4 col-4 col-sm-4">
-                                            <button class="btn btn-default btn-sm"><i class="material-icons black-text" title="favorito"  :key="post.likes">favorite</i>{{post.likes}}</button>
+                                            <button class="btn btn-default btn-sm"><i class="material-icons black-text" title="favorito"  :key="post.likes + '-segundo'">favorite</i>{{post.likes}}</button>
                                         </div>
                                     </div>
                                 </div>

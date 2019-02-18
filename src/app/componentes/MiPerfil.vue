@@ -1,5 +1,7 @@
+
 <template>
-    <div class="container-fluid mt-1">
+        <div class="container-fluid mt-1">
+
         <div class="row">
             <div class="col-md-3 col-sm-3 ">
                 <perfilPropio></perfilPropio>
@@ -44,7 +46,8 @@ export default
     },
     data(){
         return{
-            miperfil_posts:[]
+            miperfil_posts:[],
+            estados:this.estados
         }
     },
     created()

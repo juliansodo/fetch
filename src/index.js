@@ -8,14 +8,9 @@ const session = require("cookie-session");
 const uploadfiles = require("express-fileupload");
 const busboy = require("connect-busboy");
 const timeago = require("timeago.js");
-const multer = require("multer")
+const multer = require('multer');
 
-const storage = multer.diskStorage({
-    destination:path.join(__dirname,"public/img"),
-    filename: (req,file,cb) =>{
-       cb(null,file.originalname) 
-    }
-})
+
 
 //Declaraciones
 app.set("puerto", process.env.PORT || 3000);
@@ -28,13 +23,38 @@ app.locals.formatearHora = function(hora)
 };
 
 //MIDDLEWARES - Funciones que deben ejecutarse antes de cargarse las rutas.
+//los datos de session, para poder usar req.session y así manipular las sesiones de los usuarios.
+app.use(session({
+    name: "sesion",
+    keys: ['clave1', 'clave2']
+}));
+
+
+
+const storage = multer.diskStorage({
+    destination:path.join(__dirname,"public/img"),
+    filename: (req,file,cb) =>{
+        req.session.fechaImagen=Date.now();
+       cb(null,req.session.fechaImagen + "_" + req.session.usuario+".jpg");
+    }
+})
 
 //Multer -- Subir imagenes
 app.use(multer({
     storage,
     dest: path.join(__dirname,"public/img"),
-    limits : {fileSize:2000000}
+    limits : {fileSize:1000000},
+    fileFilter:(req,file,cb) =>{
+        const filetypes = /jpeg|jpg|gif|png/;
+        const mimetype = filetypes.test(file.mimetype);
+        const extname = filetypes.test(path.extname(file.originalname));
+        if(mimetype && extname){
+           return cb(null,true) 
+        }
+        cb("Error:Archivo invalido")
+    }
 }).single('image'))
+
 
 //le especfico que las vistas estarán en la carpeta /vistas
 app.set('views', path.join(__dirname, '/vistas'));
@@ -50,11 +70,7 @@ app.use(express.json());
 app.use(express.urlencoded({extended:false}));
 app.use(busboy());
 app.use(uploadfiles());
-//los datos de session, para poder usar req.session y así manipular las sesiones de los usuarios.
-app.use(session({
-    name: "sesion",
-    keys: ['clave1', 'clave2']
-}));
+
 //rutas
 //le indicamos donde estarán las rutas
 app.use("/", require("./rutas/index"));

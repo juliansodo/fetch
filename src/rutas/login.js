@@ -11,7 +11,7 @@ rutas.post("/login", (req,res) =>
         { 
             if(filasU[0].cantidad>0)
             {
-                const existenciaClave = bd.query("SELECT COUNT(*) as cantidad, nombre, id, header FROM usuarios WHERE usuario = ? AND clave = ? ", [usuario,clave], (errorC,filasC,columnasC)=>
+                const existenciaClave = bd.query("SELECT COUNT(*) as cantidad, nombre, id, header,email,genero,web, nacimiento FROM usuarios WHERE usuario = ? AND clave = ? ", [usuario,clave], (errorC,filasC,columnasC)=>
                 {
                     if(!errorC)
                     {
@@ -22,6 +22,8 @@ rutas.post("/login", (req,res) =>
                             req.session.nombre = filasC[0].nombre;
                             req.session.id = filasC[0].id;
                             req.session.header = filasC[0].header;
+                            req.session.email = filasC[0].email;
+                            req.session.genero =  filasC[0].genero;
                             res.redirect("/");
                             ActualizarDatos(req,res);
                         }

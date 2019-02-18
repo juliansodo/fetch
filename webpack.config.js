@@ -6,7 +6,8 @@ module.exports =
         indexNoSync: "./src/app/indexNoSync.js",
         MiPerfil: "./src/app/MiPerfil.js",
         Registro: "./src/app/Registro.js",
-        EditarPerfil:"./src/app/EditarPerfil.js"
+        EditarPerfil:"./src/app/EditarPerfil.js",
+        Perfiles:"./src/app/Perfiles.js"
     },
     output: {
         path: __dirname + "/src/public/vue",
