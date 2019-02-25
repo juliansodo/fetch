@@ -46,10 +46,7 @@
                                 </div>
                             </div>
                             <div class="col-md-6">
-                                <div class="form-group">
-                                    <label for="" class="duro">Fecha de nacimiento</label>
-                                    <input type="date" name="fechaNacimiento" v-model="vista_perfil.fechaNacimiento" class="form-control rounded-0" >
-                                </div>
+                               
                                 <div class="form-group">
                                     <label for="" class="duro">Sitio web</label>
                                     <input type="url" name="web" v-model="vista_perfil.web" class="form-control rounded-0" placeholder="Sitio web" >
@@ -107,6 +104,7 @@ export default {
             .then(res=>res.json())
             .then(data=>
             {
+                console.log(data)
                 this.vista_perfil = data
             })
         },

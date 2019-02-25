@@ -31,7 +31,7 @@ rutas.post("/setEditarPerfil", async(req,res)=>
     if(!req.session.usuario){return;}
     var error,mensaje;
 
-    //console.log(req.body)
+    console.log(req.body)
     if(req.file)
     {
          const nombreArchivo = req.session.fechaImagen + "_" + req.session.usuario+".jpg";
@@ -88,6 +88,7 @@ rutas.post("/setEditarPerfil", async(req,res)=>
                         mensaje:mensaje
                     }
                     res.render("perfil", {estados});
+                    req.session = ActualizarDatos(req,res)
                     return;
                 }
            
@@ -109,6 +110,7 @@ rutas.post("/setEditarPerfil", async(req,res)=>
                         mensaje:mensaje
                     }
                     res.render("perfil", {estados});
+                    req.session = ActualizarDatos(req,res)
                     return;
                 }
             }
@@ -117,7 +119,7 @@ rutas.post("/setEditarPerfil", async(req,res)=>
                 mensaje = mensaje+" El usuario no puede tener cero caracteres, ni tampoco superar el limite (12 caracteres). \n";
             }
         });
-        bd.query("UPDATE usuarios set header = ?,  genero = ?, email = ?, web = ? , nacimiento = ? WHERE id = ?", [req.body.header, req.body.genero, req.body.email, req.body.web, req.body.fechaNacimiento, req.session.id], (error, filas, campos) =>
+        bd.query("UPDATE usuarios set header = ?,  genero = ?, email = ?, web = ?  WHERE id = ?", [req.body.header, req.body.genero, req.body.email, req.body.web, req.session.id], (error, filas, campos) =>
         {
             if(error)
             {    
@@ -129,11 +131,12 @@ rutas.post("/setEditarPerfil", async(req,res)=>
                         mensaje:mensaje
                     }
                     res.render("perfil", {estados});
+                    req.session = ActualizarDatos(req,res)
                 return;
             }
         });        
     }
-    ActualizarDatos(req,res);
+    req.session= ActualizarDatos(req,res)
     error=1;
     mensaje="El perfil se ha actualizado satisfactoriamente!"
     let estados=

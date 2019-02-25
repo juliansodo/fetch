@@ -1,0 +1,82 @@
+<% include modulos/head%>
+<% include modulos/navegacionSync%>
+<style>
+body{
+    background: rgb(200, 243, 223);
+}</style>
+                <% if (perfil) { %>
+    <div class="container-fluid ">
+        <div class="row mt-4" >
+            <div class="col-md-12 col-12 col-sm-12 float-left">
+              <div class="row">
+                  <div class="col-md-3 col-sm-12  col-12">
+                      <div class="card">
+                          <div class="card-header">
+                              <div class="card-img-top col-5 col-sm-5 col-md-12 mx-auto text-center">
+                                    <img src="/img/<%= perfil.perfil_img %>" class="img-responsive rounded-circle w-75 img-circle" alt="" style="border:3px white solid;">
+                              </div>
+                              <div class="card-img-top col-12 col-sm-12 col-md-12 col-xs-12 col-xl-12 mx-auto text-center">
+                              <div class="card-body">
+                                         <div class="card-title"><h4><%= perfil.nombre %></h4></div>
+                                         <h6 class="text-muted">@<%= perfil.usuario %></h6>
+                                         <div class="text-muted col-sm-12">
+                                             <small>
+                                                    <%= perfil.header %>
+                                             </small>
+                                         </div>
+                                         <div class="btn btn-small teal mt-1 white-text duro">
+                                             Seguir
+                                         </div>
+                                </div>
+                              </div>
+                          </div>
+                      </div>
+                   </div>
+                   <div class="col-md-6 ">
+                       <div class="row">
+                           <div class="col-md-12">
+                                <div class="card teal lighten-3">
+                                        <div class="card-body  table-responsive ">
+                                            <div class="card-title text-center duro   "><h3>Estadisticas</h3></div>
+                                            <div class="input-group">
+                                                    <h2 class="form-control duro col-sm  red lighten-4 border border-warning">PREGUNTAS:        <%= perfil.preguntas %></h2>
+                                                    <h2 class="form-control duro col-sm red lighten-4  border border-warning">RESPONDIDAS:        <%= perfil.preguntas_respondidas %></h2>
+                                                    <h2 class="form-control duro col-sm red lighten-4  border border-warning">RECHAZADAS:        <%= perfil.preguntas_rechazadas %></h2>
+                                                    <h2 class="form-control duro col-sm red lighten-4  border border-warning">PUNTAJE:       <%= perfil.preguntas_puntaje %></h2>
+                                            </div>
+                                            <div class="input-group mt-1">
+                                                    <h2 class="form-control duro col-sm green lighten-4  border border-warning">POSTS: <%= perfil.posts %> </h2>
+                                                    <h2 class="form-control duro col-sm green lighten-4 border border-warning">RE-POST: <%= perfil.reposts %></h2>
+                                                    <h2 class="form-control duro col-sm green lighten-4 border border-warning ">FAVORITOS: <%= perfil.favoritos %></h2>
+                                            </div>
+                                            <div class="input-group mt-1">
+                                                    <h2 class="form-control duro col-sm blue lighten-4 border border-warning">SEGUIDAS: <%= perfil.seguidos %></h2>
+                                                    <h2 class="form-control duro col-sm blue lighten-4 border border-warning">SEGUIDORES: <%= perfil.seguidores %></h2>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                           
+                            <div class="container-fluid teal lighten-3 mt-2 p-1">
+                                    <%for (var post in posts) {%>
+                                        <%if (posts[post].esREPOST == 1) {%>
+                                            <%- include('modulos/strRepost.ejs', {post: posts[post], usuario:perfil}); %>
+                                        <%}else{%>
+                                                <%- include('modulos/strPost.ejs', {post: posts[post], usuario:perfil}); %>
+                                            <%}%>
+                                    <%}%>
+                            </div>
+                  </div>
+                  <div class="col-md-3  col-sm-12  col-12">
+                        <% include modulos/recomendados.ejs %>
+                  </div>
+              </div>
+            </div>
+        </div>
+    </div>
+    <% } %>
+    <div class="container-fluid teal lighten-4">
+        
+    </div>
+<% include modulos/footer%>

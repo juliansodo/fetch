@@ -11,6 +11,7 @@ rutas.use(require('./posteos'));
 const {irAMiPerfil, irOtroPerfil, ActualizarDatos} = require('./funciones');
 rutas.use(require('./editarPerfil'));
 rutas.use(require('./perfiles'));
+rutas.use(require('./servicios'));
 
 rutas.get("/salir" , (req,res) =>
 {

@@ -24,8 +24,11 @@ rutas.post("/login", (req,res) =>
                             req.session.header = filasC[0].header;
                             req.session.email = filasC[0].email;
                             req.session.genero =  filasC[0].genero;
+                            req.session.web = filasC[0].web;
+                            req.session.fechaNacimiento =  filasC[0].nacimiento;
+                            
                             res.redirect("/");
-                            ActualizarDatos(req,res);
+                            req.session = ActualizarDatos(req,res);
                         }
                         else
                         {

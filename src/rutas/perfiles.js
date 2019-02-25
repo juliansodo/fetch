@@ -7,7 +7,7 @@ rutas.get("/perfiles/:usuario", (req,res) =>
 {
     if(req.params.usuario == req.session.usuario)
     {
-        irAMiPerfil(req,res);
+        res.redirect("/perfil");
     }
  else
  {
