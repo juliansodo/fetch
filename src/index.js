@@ -34,6 +34,15 @@ app.use(session({
 const storage = multer.diskStorage({
     destination:path.join(__dirname,"public/img"),
     filename: (req,file,cb) =>{
+        if(file.size>1000000)
+        {
+            let estados=
+            {
+                estado:2,
+                mensaje:'El archivo no puede superar 1MB'
+            }
+            res.render("perfil", {estados});
+        }
         req.session.fechaImagen=Date.now();
        cb(null,req.session.fechaImagen + "_" + req.session.usuario+".jpg");
     }

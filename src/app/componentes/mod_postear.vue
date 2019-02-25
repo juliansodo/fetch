@@ -39,7 +39,7 @@ export default {
     {
         Postear()
         {
-        if(this.post.post.length<=0 && this.post.post.length>180){return;}
+        if(this.post.post.trim().length<=0 && this.post.post.trim().length>180){return;}
         fetch("/post",
             {
                 method:'post',

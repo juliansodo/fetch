@@ -7,7 +7,8 @@ module.exports =
         MiPerfil: "./src/app/MiPerfil.js",
         Registro: "./src/app/Registro.js",
         EditarPerfil:"./src/app/EditarPerfil.js",
-        Perfiles:"./src/app/Perfiles.js"
+        Perfiles:"./src/app/Perfiles.js",
+        Servicios:"./src/app/Servicios.js"
     },
     output: {
         path: __dirname + "/src/public/vue",

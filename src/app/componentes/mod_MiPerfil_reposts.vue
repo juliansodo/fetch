@@ -24,7 +24,7 @@
                             </div> 
                                 <div class="row text-center">
                                    <div class="col-md-4 col-4 col-sm-4">
-                                        <button class="btn btn-default btn-sm"><i class="material-icons black-text" title="favorito"  :key="post.likes">lightbulb_outline</i>{{post.likes}}</button>
+                                        <button class="btn btn-default btn-sm"><i class="material-icons black-text" title="favorito"  :key="post.shares">lightbulb_outline</i>{{post.likes}}</button>
                                         </div>
                                         <div class="col-md-4 col-4 col-sm-4">
                                         <button class="btn btn-default btn-sm"><i class="material-icons black-text" title="favorito"  :key="post.likes">favorite</i>{{post.likes}}</button>

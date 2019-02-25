@@ -4,6 +4,7 @@ const express = require("express");
 const rutas = express.Router();
 const bd = require("../db");
 const timeago = require("timeago.js");
+
 /*----------------------------------------------------->FUNCIONES<------------------------------------*/
 function irAMiPerfil(req,res)
 {
@@ -97,6 +98,7 @@ function ActualizarDatos(req,res)
     {
         req.session = filasC[0];
     });
+    return req.session;
 }
 
 
